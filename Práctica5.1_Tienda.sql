@@ -168,5 +168,8 @@ SELECT p.nombre, p.precio, f.nombre FROM producto p, fabricante f WHERE f.codigo
 SELECT p.nombre, p.precio, f.nombre FROM producto p, fabricante f WHERE f.codigo=p.codigo_fabricante and p.precio in (SELECT MAX(precio) FROM producto);
 /*Consulta 06*/
 SELECT * FROM fabricante,producto WHERE fabricante.codigo=producto.codigo_fabricante AND fabricante.nombre='Lenovo';
-
-
+/*Consulta 07*/
+SELECT * FROM producto p, fabricante f WHERE p.codigo_fabricante=f.codigo AND f.nombre='Crucial' AND p.precio>200;
+/*Consulta 08*/
+SELECT * FROM producto p, fabricante f WHERE p.codigo_fabricante=f.codigo AND (f.nombre IN ('Asus', 'Hewlett-Packard','Seagate'));
+/*Consulta 10*/
