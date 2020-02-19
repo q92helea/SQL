@@ -28,8 +28,8 @@ INSERT INTO producto VALUES(4, 'GeForce GTX 1050Ti', 185, 7);
 INSERT INTO producto VALUES(5, 'GeForce GTX 1080 Xtreme', 755, 6);
 INSERT INTO producto VALUES(6, 'Monitor 24 LED Full HD', 202, 1);
 INSERT INTO producto VALUES(7, 'Monitor 27 LED Full HD', 245.99, 1);
-INSERT INTO producto VALUES(8, 'Portátil Yoga 520', 559, 2);
-INSERT INTO producto VALUES(9, 'Portátil Ideapd 320', 444, 2);
+INSERT INTO producto VALUES(8, 'PortÃ¡til Yoga 520', 559, 2);
+INSERT INTO producto VALUES(9, 'PortÃ¡til Ideapd 320', 444, 2);
 INSERT INTO producto VALUES(10, 'Impresora HP Deskjet 3720', 59.99, 3);
 INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 
@@ -53,21 +53,21 @@ SELECT lower(nombre) AS "producto", precio FROM producto
 
 SELECT * FROM producto;
 
-/*4.Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD).*/
+/*4.Lista el nombre de los productos, el precio en euros y el precio en dï¿½lares estadounidenses (USD).*/
 
 SELECT nombre,precio,precio * 0.92 FROM producto;
 
-/*5.Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD). 
-Utiliza los siguientes alias para las columnas: nombre de producto, euros, dólares.*/
+/*5.Lista el nombre de los productos, el precio en euros y el precio en dï¿½lares estadounidenses (USD). 
+Utiliza los siguientes alias para las columnas: nombre de producto, euros, dï¿½lares.*/
 
-SELECT nombre AS 'name' ,precio AS '€',precio * 0.92 AS '$' FROM producto;
+SELECT nombre AS 'name' ,precio AS 'ï¿½',precio * 0.92 AS '$' FROM producto;
 
-/*6.Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a mayúscula.*/
+/*6.Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a mayï¿½scula.*/
 
 
-/*7.Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a minúscula*/
+/*7.Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a minï¿½scula*/
 
-/*8.Lista el nombre de todos los fabricantes en una columna, y en otra columna obtenga en mayúsculas los dos primeros 
+/*8.Lista el nombre de todos los fabricantes en una columna, y en otra columna obtenga en mayï¿½sculas los dos primeros 
 caracteres del nombre del fabricante.*/
 
 /*9.Lista los nombres y los precios de todos los productos de la tabla producto, redondeando el valor del precio.*/
@@ -77,9 +77,9 @@ para mostrarlo sin ninguna cifra decimal.*/
 
 
 
-/*11.Lista el código de los fabricantes que tienen productos en la tabla producto.*/
+/*11.Lista el cï¿½digo de los fabricantes que tienen productos en la tabla producto.*/
 
-/*12.Lista el código de los fabricantes que tienen productos en la tabla producto, eliminando los códigos 
+/*12.Lista el cï¿½digo de los fabricantes que tienen productos en la tabla producto, eliminando los cï¿½digos 
 que aparecen repetidos.*/
 
 /*13.Lista los nombres de los fabricantes ordenados de forma ascendente.*/
@@ -93,45 +93,80 @@ y en segundo lugar por el precio de forma descendente.*/
 /*16.Devuelve una lista con las 5 primeras filas de la tabla fabricante.*/
 
 /*17.Devuelve una lista con 2 filas a partir de la cuarta fila de la tabla fabricante.
-La cuarta fila también se debe incluir en la respuesta.*/
+La cuarta fila tambiï¿½n se debe incluir en la respuesta.*/
 
-/*18.Lista el nombre y el precio del producto más barato. (Utilice solamente las cláusulas ORDER BY y LIMIT)*/
+/*18.Lista el nombre y el precio del producto mï¿½s barato. (Utilice solamente las clï¿½usulas ORDER BY y LIMIT)*/
 
-/*19.Lista el nombre y el precio del producto más caro. (Utilice solamente las cláusulas ORDER BY y LIMIT)*/
+/*19.Lista el nombre y el precio del producto mï¿½s caro. (Utilice solamente las clï¿½usulas ORDER BY y LIMIT)*/
 
-/*20.Lista el nombre de todos los productos del fabricante cuyo código de fabricante es igual a 2.*/
+SELECT nombre,precio FROM producto ORDER BY precio LIMIT 1;
 
-/*21.Lista el nombre de los productos que tienen un precio menor o igual a 120€.*/
+/*20.Lista el nombre de todos los productos del fabricante cuyo cï¿½digo de fabricante es igual a 2.*/
 
-/*22.Lista el nombre de los productos que tienen un precio mayor o igual a 400€.*/
+SELECT nombre FROM fabricante ORDER BY id>=2;
 
-/*23.Lista el nombre de los productos que no tienen un precio mayor o igual a 400€.*/
+/*21.Lista el nombre de los productos que tienen un precio menor o igual a 120ï¿½.*/
 
-/*24.Lista todos los productos que tengan un precio entre 80€ y 300€. Sin utilizar el operador BETWEEN.*/
+SELECT nombre FROM producto ORDER BY precio <=120;
 
-/*25.Lista todos los productos que tengan un precio entre 60€ y 200€. Utilizando el operador BETWEEN.*/
+/*22.Lista el nombre de los productos que tienen un precio mayor o igual a 400ï¿½.*/
 
-/*26.Lista todos los productos que tengan un precio mayor que 200€ y que el código de fabricante sea igual a 6.*/
+SELECT nombre FROM producto ORDER BY precio >=420;
 
-/*27.Lista todos los productos donde el código de fabricante sea 1, 3 o 5. Sin utilizar el operador IN.*/
+/*23.Lista el nombre de los productos que no tienen un precio mayor o igual a 400ï¿½.*/
 
-/*28.Lista todos los productos donde el código de fabricante sea 1, 3 o 5. Utilizando el operador IN.*/
+SELECT nombre FROM productos 
 
-/*29.Lista el nombre y el precio de los productos en céntimos (Habrá que multiplicar por 100 el valor del precio).
-Cree un alias para la columna que contiene el precio que se llame céntimos.*/
+/*24.Lista todos los productos que tengan un precio entre 80ï¿½ y 300ï¿½. Sin utilizar el operador BETWEEN.*/
+
+/*25.Lista todos los productos que tengan un precio entre 60ï¿½ y 200ï¿½. Utilizando el operador BETWEEN.*/
+
+/*26.Lista todos los productos que tengan un precio mayor que 200ï¿½ y que el cï¿½digo de fabricante sea igual a 6.*/
+
+/*27.Lista todos los productos donde el cï¿½digo de fabricante sea 1, 3 o 5. Sin utilizar el operador IN.*/
+
+/*28.Lista todos los productos donde el cï¿½digo de fabricante sea 1, 3 o 5. Utilizando el operador IN.*/
+
+/*29.Lista el nombre y el precio de los productos en cï¿½ntimos (Habrï¿½ que multiplicar por 100 el valor del precio).
+Cree un alias para la columna que contiene el precio que se llame cï¿½ntimos.*/
 
 /*Lista los nombres de los fabricantes cuyo nombre empiece por la letra S.*/
 
 /*Lista los nombres de los fabricantes cuyo nombre termine por la vocal e.*/
 
-/*Lista los nombres de los fabricantes cuyo nombre contenga el carácter w.*/
+/*Lista los nombres de los fabricantes cuyo nombre contenga el carï¿½cter w.*/
 
 /*Lista los nombres de los fabricantes cuyo nombre sea de 4 caracteres.*/
 
-/*Devuelve una lista con el nombre de todos los productos que contienen la cadena Portátil en el nombre.*/
+/*Devuelve una lista con el nombre de todos los productos que contienen la cadena Portï¿½til en el nombre.*/
 
 /*Devuelve una lista con el nombre de todos los productos que contienen la cadena Monitor en el nombre y 
-tienen un precio inferior a 215 €.*/
+tienen un precio inferior a 215 ï¿½.*/
 
-/*Lista el nombre y el precio de todos los productos que tengan un precio mayor o igual a 180€. Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente).
+/*Lista el nombre y el precio de todos los productos que tengan un precio mayor o igual a 180ï¿½. Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente).
 */
+
+/*consulta 1 multitabla*/
+SELECT producto.nombre,precio,fabricante.nombre FROM producto,fabricante where producto.codigo_fabricante=fabricante.codigo;
+
+/*Ordene el resultado por el nombre del fabricante por orden alfabético
+*/
+SELECT producto.nombre,precio,fabricante.nombre FROM producto,fabricante where producto.codigo_fabricante=fabricante.codigo 
+ORDER BY fab.nombre;
+
+SELECT producto.nombre,precio,fabricante.nombre 
+FROM producto,fabricante where producto.codigo_fabricante=fabricante.codigo;
+
+SELECT producto.nombre,precio,fabricante.nombre FROM producto,fabricante where producto.codigo_fabricante=fabricante.codigo 
+ORDER BY fabricante.nombre;
+
+SELECT p.codigo,p.nombre,f.codigo,f.nombre FROM producto p, fabricante f where p.codigo_fabricante=f.codigo;
+
+/*Consulta 04*/
+SELECT p.nombre, p.precio, f.nombre FROM producto p, fabricante f WHERE f.codigo=p.codigo_fabricante and p.precio in (SELECT MIN(precio) FROM producto);
+/*Consulta 05*/
+SELECT p.nombre, p.precio, f.nombre FROM producto p, fabricante f WHERE f.codigo=p.codigo_fabricante and p.precio in (SELECT MAX(precio) FROM producto);
+/*Consulta 06*/
+SELECT * FROM fabricante,producto WHERE fabricante.codigo=producto.codigo_fabricante AND fabricante.nombre='Lenovo';
+
+
